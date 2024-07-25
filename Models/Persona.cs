@@ -14,6 +14,16 @@ public class Persona{
     protected string Email{get;set;}
     protected string Telefono{get;set;}
 
+    public Persona(string Nombre,string Apellido,string TipoDocumento,string NumeroDocumento,string Email,string Telefono){
+        Id=Guid.NewGuid();
+        this.Nombre=Nombre;
+        this.Apellido=Apellido;
+        this.TipoDocumento=TipoDocumento;
+        this.NumeroDocumento=NumeroDocumento;
+        this.Email=Email;
+        this.Telefono=Telefono;
+
+    }
     public virtual void MostrarDetalles(){}
 
 
