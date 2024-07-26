@@ -15,6 +15,7 @@ public class Profesor:Persona{
         this.Asignatura=Asignatura;
         this.Salario=Salario;
         FechaContratacion= new DateTime(year,mes,dia);
+        Cursos = new List<string>();
 
 
     }
@@ -25,10 +26,22 @@ public class Profesor:Persona{
     }
     public void ObtenerSalario(){
         Console.WriteLine("Salario del profesor: {0}",Salario);
+        
+    }
+        public static  void agregarCurso(string curso,string documento ){
+
+        // Encuentra el profesor con el número de documento específico
+        Profesor? prof = AdministradorApp.Profesores.FirstOrDefault(p => p.NumeroDocumento == documento);
+        if (prof != null)
+        {
+        prof.Cursos.Add(curso);
+        }
+        Uti.TextoVerde("agregadoSarisfactoriamente");
+
     }
     public override void MostrarDetalles()
     {
-        Console.WriteLine($"{Nombre} {Apellido} {TipoDocumento} {Email} {Telefono}");
-    }
+        Console.WriteLine($"{Nombre,20} {Apellido,30} {Asignatura,40} {TipoDocumento,15} {NumeroDocumento} {Email,50} {Telefono,20} {Salario,20:c} {string.Join(", ",Cursos)} ");
 
+}
 }

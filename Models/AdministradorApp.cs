@@ -31,28 +31,16 @@ public static class AdministradorApp{
             profesor.MostrarDetalles();
         }
     }
-    public static void TextoVerde(string texto){
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write(texto);
-        Console.ResetColor();
-
-    }
-    public static void TextoRojo(string texto){
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write(texto);
-        Console.ResetColor();
-
-    }
-
+    
     public static void IntControlParsing(){
-        try
+         try
         {
-           int result=int.Parse(Console.ReadLine()); 
+        int option= Convert.ToInt32(Console.ReadLine());
         }
-        catch ()
+        catch (System.FormatException)
         {
+            Console.WriteLine("Respuesta vacia");
             
-            throw;
         }
     }
 

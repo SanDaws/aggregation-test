@@ -40,7 +40,9 @@ public class Estudiante : Persona
     }
     //calcula edad de estudiante
     public int CalcularEdad(){
-        int edad = FechaNacimiento.CompareTo(DateOnly.FromDateTime(DateTime.Now));
+        DateOnly datenow=DateOnly.FromDateTime(DateTime.Now);
+        
+        int edad = datenow.CompareTo(FechaNacimiento);
         return edad;
     }
 
