@@ -52,8 +52,8 @@ namespace aggregation_test.Models;
             Console.Write($@"
         oprima el numero de opcion  a la que decea acceder
         1: Lista de estudiantes
-        2: Empleados
-        3: Cliente
+        2: Nuevo registro Estudiante
+        3: eliminar registro Estudiante
         0: Salir");
             ConsoleKeyInfo response = Console.ReadKey();
             switch (response.Key)
@@ -84,7 +84,7 @@ namespace aggregation_test.Models;
         oprima el numero de opcion  a la que decea acceder
         1: Lista De Profesores
         2: Empleados
-        3: Cliente
+        3: Edita
         0: Salir");
             ConsoleKeyInfo response = Console.ReadKey();
             switch (response.Key)
@@ -148,4 +148,17 @@ namespace aggregation_test.Models;
             Console.ReadKey();
             MenuEstudiantes();
         }
+
+        public static  void NuevoEstudiante(){
+            
+            
+
+            Console.WriteLine(" oprima cualquier boton para volver al menu...");
+            Console.ReadKey();
+            MenuEstudiantes();
+        } 
+
+
+
+    //class ends    
     }
