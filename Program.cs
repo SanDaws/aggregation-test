@@ -64,8 +64,7 @@ class Program
     {
         BurnedData();
         
-        string a=Console.ReadLine();
-        int cosa=int.Parse(Console.ReadLine());
+
         Uti.MenuPrincipal();
 
     }
