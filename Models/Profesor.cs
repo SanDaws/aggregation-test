@@ -25,7 +25,7 @@ public class Profesor:Persona{
         return antiguedad;
     }
     public void ObtenerSalario(){
-        Console.WriteLine("Salario del profesor: {0}",Salario);
+        Console.WriteLine("Salario del profesor: {0:c}",Salario);
         
     }
         public static  void agregarCurso(string curso,string documento ){
