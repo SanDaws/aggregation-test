@@ -36,8 +36,18 @@ public class Profesor:Persona{
         {
         prof.Cursos.Add(curso);
         }
-        Uti.TextoVerde("agregadoSarisfactoriamente");
+        Uti.TextoVerde("agregado Satisfactoriamente");
 
+    }
+    public static Profesor ProfesorporDocumento(string Documento)
+    {
+        Profesor? prof = AdministradorApp.Profesores.FirstOrDefault(p => p.NumeroDocumento == Documento);
+        if (prof != null)
+        {
+            return prof;
+        }
+        Uti.TextoRojo("Estudiante no existe");
+        return null;
     }
     public override void MostrarDetalles()
     {

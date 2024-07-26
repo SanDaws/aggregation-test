@@ -35,8 +35,11 @@ public class Estudiante : Persona
         Console.WriteLine("Resultado: ");
 
         // calificaiones de 1 a 100= 75 minimo
-        Console.ForegroundColor = ConsoleColor.Red; // Cambia el color del texto a rojo
-        Console.Write(result);
+        if (result<75)
+        {
+            Console.ForegroundColor = ConsoleColor.Red; // Cambia el color del texto a rojo
+            Console.Write(result);
+        }
     }
     //calcula edad de estudiante
     public int CalcularEdad(){
@@ -49,5 +52,18 @@ public class Estudiante : Persona
     //formato sobreescrito de 
     public override void MostrarDetalles(){
         Console.WriteLine($"{Nombre,20} {Apellido,30} {CursoActual,8} {NombreAcudiente,50} {TipoDocumento,15} {NumeroDocumento} {Email,50} {Telefono,20} {CalcularEdad()} ");
+    }
+
+
+    public static Estudiante EstudianteporDocumento(string Documento)
+    {
+        Estudiante? estudiante = AdministradorApp.Estudiantes.FirstOrDefault(p => p.NumeroDocumento == Documento);
+        if (estudiante != null)
+        {
+            return estudiante;
+        }
+        Uti.TextoRojo("Estudiante no existe");
+        return null;
+
     }
 }
