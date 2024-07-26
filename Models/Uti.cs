@@ -43,6 +43,7 @@ namespace aggregation_test.Models;
                     break;
                 default:
                     Console.WriteLine("opcion no valida");
+                    MenuPrincipal();
 
                     break;
             }
@@ -62,7 +63,7 @@ namespace aggregation_test.Models;
                     ListarEstudiantes(AdministradorApp.Estudiantes,"Todos los Estudiantes");
                     break;
                 case ConsoleKey.D2:// case employe menu
-
+                    NuevoEstudiante();
                     break;
                 case ConsoleKey.D3:// case customer menu
 
@@ -74,7 +75,7 @@ namespace aggregation_test.Models;
 
                 default:
                     Console.WriteLine("opcion no valida");
-
+                    MenuEstudiantes();
                     break;
             }
         }
@@ -93,7 +94,7 @@ namespace aggregation_test.Models;
                     ListarProfesores(AdministradorApp.Profesores,"Todos los profesores");
                     break;
                 case ConsoleKey.D2:// case employe menu
-
+                    NuevoProfesor();
                     break;
                 case ConsoleKey.D3:// case customer menu
 
@@ -105,6 +106,7 @@ namespace aggregation_test.Models;
 
                 default:
                     Console.WriteLine("opcion no valida");
+                    Menuprofesores();
 
                     break;
             }
@@ -148,16 +150,88 @@ namespace aggregation_test.Models;
             Console.ReadKey();
             MenuEstudiantes();
         }
-
+        
+        //estas al ser funciones de menu de usuario, las pondre aqui en lugar de ponerlas dentro de la clase administradorapp
         public static  void NuevoEstudiante(){
+            Title("Nuevo Estudiante",ConsoleColor.DarkGreen);
+            //nombre
+            Console.Write("Nombre del estudiante: ");
+            string Nombre= exceptions.AntiEMptyorNull();
+            //apellido
+            Console.Write("Apellido: ");
+            string Apellido= exceptions.AntiEMptyorNull();
+            //tipo de docuemto
+            Console.Write("Tipo de Documento: ");
+            string TipoDocumento= exceptions.AntiEMptyorNull();
+            //numero de docuemto
+            Console.Write("Numero de Documento: ");
+            string NumeroDocumento= exceptions.AntiEMptyorNull();
+        // email
+            Console.Write("Email: ");
+            string Email= exceptions.AntiEMptyorNull();
+            //acudiente
+            Console.Write("Nombre del Acudeinte: ");
+            string NombreAcudiente= exceptions.AntiEMptyorNull();
+            //telefono
+            Console.Write("Numero de telefono: ");
+            string Telefono= exceptions.AntiEMptyorNull();
+            //telefono
+            Console.Write("Curso Actual: ");
+            string CursoActual= exceptions.AntiEMptyorNull().ToUpper();
+            //fecha
+            int dia= exceptions.safeInt("Dia de Nacimiento: ");
+            int month= exceptions.safeInt("Mes de Nacimiento: " );
+            int year= exceptions.safeInt("Año de Nacimiento: ");
             
+            AdministradorApp.Estudiantes.Add(new Estudiante(Nombre,Apellido,TipoDocumento,NumeroDocumento,Email,Telefono,NombreAcudiente,CursoActual,dia,month,year));
+            TextoVerde("Nuevo Estudiante registrado satisfactoriamente");
+
+            Console.WriteLine(" oprima cualquier boton para volver al menu...");
+            Console.ReadKey();
+            MenuEstudiantes();
+        } 
+        //creacion nuevo profesor
+        public static  void NuevoProfesor(){
+            Title("Nuevo Profesor",ConsoleColor.DarkGreen);
+            //nombre
+            Console.Write("Nombre del Profesor: ");
+            string Nombre= exceptions.AntiEMptyorNull();
+            //apellido
+            Console.Write("Apellido: ");
+            string Apellido= exceptions.AntiEMptyorNull();
+            //tipo de docuemto
+            Console.Write("Tipo de Documento: ");
+            string TipoDocumento= exceptions.AntiEMptyorNull();
+            //numero de docuemto
+            Console.Write("Numero de Documento: ");
+            string NumeroDocumento= exceptions.AntiEMptyorNull();
+        // email
+            Console.Write("Email: ");
+            string Email= exceptions.AntiEMptyorNull();
+            //acudiente
+            Console.Write("Nombre del Acudeinte: ");
+            string Asignatura= exceptions.AntiEMptyorNull();
+            //telefono
+            Console.Write("Numero de telefono: ");
+            string Telefono= exceptions.AntiEMptyorNull();
+            //Salario
+            double Salario= exceptions.safeDouble("Salario");
+            //fecha de contratacion
+            int dia= exceptions.safeInt("Dia decontratacion: ");
+            int month= exceptions.safeInt("Mes de contratacion " );
+            int year= exceptions.safeInt("Año decontratacion: ");
+
+            AdministradorApp.Profesores.Add(new Profesor(Nombre,Apellido,TipoDocumento,NumeroDocumento,Email,Telefono,Asignatura,Salario,dia,month,year));
             
+            TextoVerde("Nuevo Profesor registrado satisfactoriamente");
 
             Console.WriteLine(" oprima cualquier boton para volver al menu...");
             Console.ReadKey();
             MenuEstudiantes();
         } 
 
+
+        
 
 
     //class ends    
