@@ -32,17 +32,6 @@ public static class AdministradorApp{
         }
     }
     
-    public static void IntControlParsing(){
-         try
-        {
-        int option= Convert.ToInt32(Console.ReadLine());
-        }
-        catch (System.FormatException)
-        {
-            Console.WriteLine("Respuesta vacia");
-            
-        }
-    }
 
 
 
