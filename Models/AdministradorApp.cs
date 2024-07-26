@@ -31,6 +31,30 @@ public static class AdministradorApp{
             profesor.MostrarDetalles();
         }
     }
+    public static void TextoVerde(string texto){
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write(texto);
+        Console.ResetColor();
+
+    }
+    public static void TextoRojo(string texto){
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write(texto);
+        Console.ResetColor();
+
+    }
+
+    public static void IntControlParsing(){
+        try
+        {
+           int result=int.Parse(Console.ReadLine()); 
+        }
+        catch ()
+        {
+            
+            throw;
+        }
+    }
 
 
 

@@ -28,7 +28,7 @@ public class Profesor:Persona{
     }
     public override void MostrarDetalles()
     {
-        
+        Console.WriteLine($"{Nombre} {Apellido} {TipoDocumento} {Email} {Telefono}");
     }
 
 }
