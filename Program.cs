@@ -64,13 +64,10 @@ class Program
     {
         BurnedData();
         
+        string a=Console.ReadLine();
+        int cosa=int.Parse(Console.ReadLine());
         Uti.MenuPrincipal();
 
     }
-    public void TextoVerde(string texto){
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write(texto);
-        Console.ResetColor();
-
-    }
+    
 }
