@@ -13,6 +13,7 @@ namespace aggregation_test.Models;
             Console.ResetColor();
 
         }
+        // textos desplegados en rojo
         public static void TextoRojo(string texto)
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -55,6 +56,7 @@ namespace aggregation_test.Models;
         1: Lista de estudiantes
         2: Nuevo registro Estudiante
         3: eliminar registro Estudiante
+        4: Promedio Del Estudiante
         0: Salir");
             ConsoleKeyInfo response = Console.ReadKey();
             switch (response.Key)
@@ -66,7 +68,10 @@ namespace aggregation_test.Models;
                     NuevoEstudiante();
                     break;
                 case ConsoleKey.D3:// case customer menu
-
+                    AdministradorApp.RemoverEstudiante();
+                    break;
+                    case ConsoleKey.D4:// proimedio estudiante
+                   
                     break;
                 case ConsoleKey.D0:// case exit
 
@@ -84,8 +89,9 @@ namespace aggregation_test.Models;
             Console.Write($@"
         oprima el numero de opcion  a la que decea acceder
         1: Lista De Profesores
-        2: Empleados
-        3: Edita
+        2: Nuevo Registro Profesor
+        3: eliminar Registro de Profesor
+        4: Salario Profesor
         0: Salir");
             ConsoleKeyInfo response = Console.ReadKey();
             switch (response.Key)
@@ -97,7 +103,10 @@ namespace aggregation_test.Models;
                     NuevoProfesor();
                     break;
                 case ConsoleKey.D3:// case customer menu
-
+                    AdministradorApp.RemoverProfesor();
+                    break;
+                case ConsoleKey.D4:// proimedio estudiante
+                   AdministradorApp.SalarioProfesor();
                     break;
                 case ConsoleKey.D0:// case exit
 

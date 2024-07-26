@@ -53,7 +53,7 @@ class Program
         AdministradorApp.Estudiantes.Add(new Estudiante("Carlos", "López", "TI", "135792468", "carlos.lopez@example.com", "314-555-4321", "Andrés Gómez", "9A", 8, 7, 2007));
         AdministradorApp.Estudiantes.Add(new Estudiante("María", "Rodríguez", "CC", "246813579", "maria.rodriguez@example.com", "321-555-7890", "Luisa Pérez", "12C", 3, 11, 2004));
         AdministradorApp.Estudiantes.Add(new Estudiante("Juan", "Gómez", "TI", "987654321", "juan.gomez@example.com", "310-555-5678", "Pedro Vargas", "7B", 18, 1, 2009));
-        AdministradorApp.Estudiantes.Add(new Estudiante("Sofía", "Pérez", "CC", "123456789", "sofia.perez@example.com", "315-555-3456", "Ana Martínez", "10B", 22, 6, 2006));
+        AdministradorApp.Estudiantes.Add(new Estudiante("Sofía", "Pérez", "CC", "1234567859", "sofia.perez@example.com", "315-555-3456", "Ana Martínez", "10B", 22, 6, 2006));
         AdministradorApp.Estudiantes.Add(new Estudiante("Andrés", "López", "TI", "543210987", "andres.lopez@example.com", "317-555-6789", "Carlos Gómez", "11A", 10, 3, 2005));
         AdministradorApp.Estudiantes.Add(new Estudiante("Luis", "García", "CC", "135792468", "luis.garcia@example.com", "314-555-2345", "María Rodríguez", "9B", 5, 12, 2007));
         AdministradorApp.Estudiantes.Add(new Estudiante("Camila", "Martínez", "TI", "246813579", "camila.martinez@example.com", "321-555-4567", "Pedro López", "12A", 15, 8, 2004));

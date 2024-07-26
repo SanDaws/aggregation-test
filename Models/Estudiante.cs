@@ -39,19 +39,23 @@ public class Estudiante : Persona
         {
             Console.ForegroundColor = ConsoleColor.Red; // Cambia el color del texto a rojo
             Console.Write(result);
+        }else
+        {
+           Console.ForegroundColor = ConsoleColor.Green; // Cambia el color del texto a rojo
+            Console.Write(result);
         }
     }
     //calcula edad de estudiante
     public int CalcularEdad(){
         DateOnly datenow=DateOnly.FromDateTime(DateTime.Now);
         
-        int edad = datenow.CompareTo(FechaNacimiento);
+        int edad =datenow.Year - FechaNacimiento.Year;
         return edad;
     }
 
     //formato sobreescrito de 
     public override void MostrarDetalles(){
-        Console.WriteLine($"{Nombre,20} {Apellido,30} {CursoActual,8} {NombreAcudiente,50} {TipoDocumento,15} {NumeroDocumento} {Email,50} {Telefono,20} {CalcularEdad()} ");
+        Console.WriteLine($"{Nombre +" "+ Apellido,30} {CursoActual,8} {NombreAcudiente,30} {TipoDocumento,15} {NumeroDocumento,-15} {Email,50} {Telefono,20} {CalcularEdad(),12} ");
     }
 
 

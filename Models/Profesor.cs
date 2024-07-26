@@ -47,6 +47,7 @@ public class Profesor:Persona{
             return prof;
         }
         Uti.TextoRojo("Estudiante no existe");
+        
         return null;
     }
     public override void MostrarDetalles()

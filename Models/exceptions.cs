@@ -19,7 +19,7 @@ public static class exceptions
         {
             option = Convert.ToInt32(AntiEMptyorNull());
         }
-        catch (System.FormatException)
+        catch (FormatException)
         {
             Console.WriteLine("Respuesta No valida");
             safeInt("imposibe convertir, intente con un numero");
@@ -36,7 +36,7 @@ public static class exceptions
         {
             option = Convert.ToDouble(AntiEMptyorNull());
         }
-        catch (System.FormatException)
+        catch (FormatException)
         {
             Uti.TextoRojo("Respuesta No valida");
             safeDouble("imposibe convertir, intente con un numero");
