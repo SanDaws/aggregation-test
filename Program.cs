@@ -65,7 +65,7 @@ class Program
         BurnedData();
         
 
-        Uti.MenuPrincipal();
+        Uti.MainMEnu();
 
     }
     

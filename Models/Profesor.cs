@@ -36,7 +36,21 @@ public class Profesor:Persona{
         {
         prof.Cursos.Add(curso);
         }
-        Uti.TextoVerde("agregado Satisfactoriamente");
+        Uti.GreenText("agregado Satisfactoriamente");
+
+    }
+
+    public static  void editarNombre(string documento,string NombreNuevo ){
+
+        // Encuentra el profesor con el número de documento específico
+        Profesor? prof = AdministradorApp.Profesores.FirstOrDefault(p => p.NumeroDocumento == documento);
+        if (prof != null)
+        {
+            prof.Nombre= NombreNuevo;
+        }
+        Uti.GreenText("agregado Satisfactoriamente");
+        Uti.ReturnToMenu();
+        Uti.Menuprofesores();
 
     }
     public static Profesor ProfesorporDocumento(string Documento)
@@ -46,7 +60,7 @@ public class Profesor:Persona{
         {
             return prof;
         }
-        Uti.TextoRojo("Estudiante no existe");
+        Uti.RedText("Estudiante no existe");
         
         return null;
     }

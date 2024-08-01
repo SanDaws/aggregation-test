@@ -66,7 +66,7 @@ public class Estudiante : Persona
         {
             return estudiante;
         }
-        Uti.TextoRojo("Estudiante no existe");
+        Uti.RedText("Estudiante no existe");
         return null;
 
     }

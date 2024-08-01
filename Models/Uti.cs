@@ -6,23 +6,26 @@ using System.Threading.Tasks;
 namespace aggregation_test.Models;
     public static class Uti
     {
-        public static void TextoVerde(string texto)
+        //prints the incoming text green
+        public static void GreenText(string texto)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(texto);
             Console.ResetColor();
 
         }
-        // textos desplegados en rojo
-        public static void TextoRojo(string texto)
+        
+        //prints the incoming text Red
+        public static void RedText(string texto)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(texto);
             Console.ResetColor();
 
         }
-//menu principal
-        public static void MenuPrincipal(){
+        
+        //Main menue for the User interface
+        public static void MainMEnu(){
             Title("AdministracionColegio",ConsoleColor.Magenta);
             Console.Write($@"
         oprima el numero de opcion  a la que decea acceder
@@ -33,7 +36,7 @@ namespace aggregation_test.Models;
             switch (response.Key)
             {
                 case ConsoleKey.D1://hacia menu estudiantes
-                    MenuEstudiantes();
+                    StudentMEnu();
                     break;
                 case ConsoleKey.D2:// hacia menu Profesores
                     Menuprofesores();
@@ -44,12 +47,13 @@ namespace aggregation_test.Models;
                     break;
                 default:
                     Console.WriteLine("opcion no valida");
-                    MenuPrincipal();
+                    MainMEnu();
 
                     break;
             }
         }
-        public static void MenuEstudiantes(){
+        //second menue if its necessary
+        public static void StudentMEnu(){
             Title("Estudiantes",ConsoleColor.Blue);
             Console.Write($@"
         oprima el numero de opcion  a la que decea acceder
@@ -75,15 +79,16 @@ namespace aggregation_test.Models;
                     break;
                 case ConsoleKey.D0:// case exit
 
-                    MenuPrincipal();
+                    MainMEnu();
                     break;
 
                 default:
                     Console.WriteLine("opcion no valida");
-                    MenuEstudiantes();
+                    StudentMEnu();
                     break;
             }
         }
+
         public static void Menuprofesores(){
             Title("Profesores",ConsoleColor.Blue);
             Console.Write($@"
@@ -92,6 +97,7 @@ namespace aggregation_test.Models;
         2: Nuevo Registro Profesor
         3: eliminar Registro de Profesor
         4: Salario Profesor
+        5: editar nombre profesor
         0: Salir");
             ConsoleKeyInfo response = Console.ReadKey();
             switch (response.Key)
@@ -108,9 +114,12 @@ namespace aggregation_test.Models;
                 case ConsoleKey.D4:// proimedio estudiante
                    AdministradorApp.SalarioProfesor();
                     break;
+                case ConsoleKey.D5:
+                    EditarNombrePRofesor();
+                break;
                 case ConsoleKey.D0:// case exit
 
-                    MenuPrincipal();
+                    MainMEnu();
                     break;
 
                 default:
@@ -120,10 +129,15 @@ namespace aggregation_test.Models;
                     break;
             }
         }
+        //generic function to create  returns to the main menu, used for user experience
+        public static void ReturnToMenu(){
+            Console.WriteLine(" oprima cualquier boton para volver al menu...");
+            Console.ReadKey();
+            MainMEnu();
+        }
 
-
-        //Titulos
-        public static void Title(string title,ConsoleColor color){
+        //clears console and wirte a centrated Tittle
+        public static void Title(string title,ConsoleColor color){//uses as paramethers the required text and a color from consoleColor
             Console.Clear();
             Console.ForegroundColor = color;
             string upperline = new string('═', Console.WindowWidth - 2);
@@ -132,8 +146,6 @@ namespace aggregation_test.Models;
             Console.WriteLine(midelLine + title);
             Console.WriteLine("╚" + upperline + "╝");
             Console.ResetColor();
-
-
         }
         //recorrido de listas en busquedas
         //profesores
@@ -157,7 +169,7 @@ namespace aggregation_test.Models;
             }
             Console.WriteLine(" oprima cualquier boton para volver al menu...");
             Console.ReadKey();
-            MenuEstudiantes();
+            StudentMEnu();
         }
         
         //estas al ser funciones de menu de usuario, las pondre aqui en lugar de ponerlas dentro de la clase administradorapp
@@ -193,11 +205,11 @@ namespace aggregation_test.Models;
             int year= exceptions.safeInt("Año de Nacimiento: ");
             
             AdministradorApp.Estudiantes.Add(new Estudiante(Nombre,Apellido,TipoDocumento,NumeroDocumento,Email,Telefono,NombreAcudiente,CursoActual,dia,month,year));
-            TextoVerde("Nuevo Estudiante registrado satisfactoriamente");
+            GreenText("Nuevo Estudiante registrado satisfactoriamente");
 
             Console.WriteLine(" oprima cualquier boton para volver al menu...");
             Console.ReadKey();
-            MenuEstudiantes();
+            StudentMEnu();
         } 
         //creacion nuevo profesor
         public static  void NuevoProfesor(){
@@ -232,14 +244,21 @@ namespace aggregation_test.Models;
 
             AdministradorApp.Profesores.Add(new Profesor(Nombre,Apellido,TipoDocumento,NumeroDocumento,Email,Telefono,Asignatura,Salario,dia,month,year));
             
-            TextoVerde("Nuevo Profesor registrado satisfactoriamente");
+            GreenText("Nuevo Profesor registrado satisfactoriamente");
 
             Console.WriteLine(" oprima cualquier boton para volver al menu...");
             Console.ReadKey();
-            MenuEstudiantes();
+            StudentMEnu();
         } 
 
-
+     public static void EditarNombrePRofesor(){
+        Uti.Title("Editar Profesor",ConsoleColor.Cyan);
+        Console.Write("Documento Del profesor ");
+            string Documento= exceptions.AntiEMptyorNull();
+            Console.Write("Nombre del Profesor: ");
+            string NuevoNombre= exceptions.AntiEMptyorNull();
+            Profesor.editarNombre(Documento,NuevoNombre);
+     }
         
 
 

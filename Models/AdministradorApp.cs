@@ -41,7 +41,7 @@ public static class AdministradorApp{
          
         if (Estudiante.EstudianteporDocumento(documento) == null)
         {
-            Uti.TextoRojo("Estudiante No encontrado");
+            Uti.RedText("Estudiante No encontrado");
             Console.WriteLine(" oprima cualquier boton para volver a empezar...");
             Console.ReadKey();
 
@@ -51,14 +51,14 @@ public static class AdministradorApp{
             _estudiante.MostrarDetalles();
             Estudiantes.Remove(Estudiante.EstudianteporDocumento(documento));
 
-            Uti.TextoVerde("Registro Eliminado Satisfactoriamente");
+            Uti.GreenText("Registro Eliminado Satisfactoriamente");
             
 
         }
 
         Console.WriteLine(" oprima cualquier boton para volver al...");
         Console.ReadKey();
-        Uti.MenuEstudiantes();
+        Uti.StudentMEnu();
 
 
     }
@@ -70,7 +70,7 @@ public static class AdministradorApp{
          
         if (Profesor.ProfesorporDocumento(documento) == null)
         {
-            Uti.TextoRojo("Profesor No encontrado");
+            Uti.RedText("Profesor No encontrado");
             Console.WriteLine(" oprima cualquier boton para volver a empezar...");
             Console.ReadKey();
 
@@ -80,14 +80,14 @@ public static class AdministradorApp{
             _profesore.MostrarDetalles();
             Profesores.Remove(_profesore);
 
-            Uti.TextoVerde("Registro Eliminado Satisfactoriamente");
+            Uti.GreenText("Registro Eliminado Satisfactoriamente");
             
 
         }
 
         Console.WriteLine(" oprima cualquier boton para volver al...");
         Console.ReadKey();
-        Uti.MenuEstudiantes();
+        Uti.StudentMEnu();
 
 
     }
@@ -99,7 +99,7 @@ public static class AdministradorApp{
          
         if (Estudiante.EstudianteporDocumento(documento) == null)
         {
-            Uti.TextoRojo("Estudiante No encontrado");
+            Uti.RedText("Estudiante No encontrado");
             Console.WriteLine(" oprima cualquier boton para volver a empezar...");
             Console.ReadKey();
 
@@ -120,7 +120,7 @@ public static class AdministradorApp{
          
         if (Profesor.ProfesorporDocumento(documento) == null)
         {
-            Uti.TextoRojo("Profesor No encontrado");
+            Uti.RedText("Profesor No encontrado");
             Console.WriteLine(" oprima cualquier boton para volver a empezar...");
             Console.ReadKey();
 
@@ -134,7 +134,7 @@ public static class AdministradorApp{
 
         Console.WriteLine(" oprima cualquier boton para volver al...");
         Console.ReadKey();
-        Uti.MenuEstudiantes();
+        Uti.StudentMEnu();
 
 
     }
